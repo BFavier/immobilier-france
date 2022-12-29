@@ -1,0 +1,101 @@
+Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
+disposition_parcelle;1;iddispopar;identifiant pour clef primaire;X;X;X;X;X;PK;
+disposition_parcelle;2;iddispo;identifiant de la table disposition;X;X;X;X;X;U;
+disposition_parcelle;3;idparcelle;identifiant de la table parcelle;X;X;X;X;X;U;
+disposition_parcelle;4;idmutation;identifiant de clef primaire de la table mutation;X;X;X;X;X;;
+disposition_parcelle;5;idpar;identifiant de la parcelle (idem Fichiers fonciers);X;X;X;X;X;;
+disposition_parcelle;6;coddep;code du département;X;X;X;X;X;C;
+disposition_parcelle;7;codcomm;code insee de la commune;X;X;X;X;X;;
+disposition_parcelle;8;prefsect;prefixe de section de la parcelle;X;X;X;X;X;;
+disposition_parcelle;9;nosect;numéro de section de la parcelle;X;X;X;X;X;;
+disposition_parcelle;10;noplan;numéro de la parcelle;X;X;X;X;X;;
+disposition_parcelle;11;datemut;date de signature du document (acte de vente);X;X;X;X;X;;
+disposition_parcelle;12;anneemut;annee de signature du document;X;X;X;X;X;;
+disposition_parcelle;13;moismut;mois de signature du document;X;X;X;X;X;;
+disposition_parcelle;14;parcvendue;Vrai si la parcelle fait partie de la vente;X;X;X;X;X;;
+disposition_parcelle;15;nbmutjour;nombre de mutations de la parcelle au cours de la journée;X;X;X;X;X;;
+disposition_parcelle;16;nbmutannee;nombre de mutations de la parcelle au cours de l'année calendaire;X;X;X;X;X;;
+disposition_parcelle;17;datemutpre;date de la précédente mutation de la parcelle (date antérieure);X;X;X;X;X;;
+disposition_parcelle;18;l_idmutpre;identifiants des mutations précédentes de la parcelle ayant eu lieu à la date de mutation précédente (datemutpre);X;X;X;X;X;;
+disposition_parcelle;19;datemutsui;date de la mutation suivante de la parcelle (date postérieure);X;X;X;X;X;;
+disposition_parcelle;20;l_idmutsui;identifiants des mutations suivantes de la parcelle ayant eu lieu à la date de mutation suivante (datemutsui);X;X;X;X;X;;
+disposition_parcelle;21;dcnt01;surface de suf de type 01 ayant muté;X;X;X;X;X;;
+disposition_parcelle;22;dcnt02;surface de suf de type 02  ayant muté;X;X;X;X;X;;
+disposition_parcelle;23;dcnt03;surface de suf de type 03 ayant muté;X;X;X;X;X;;
+disposition_parcelle;24;dcnt04;surface de suf de type 04 ayant muté;X;X;X;X;X;;
+disposition_parcelle;25;dcnt05;surface de suf de type 05 ayant muté;X;X;X;X;X;;
+disposition_parcelle;26;dcnt06;surface de suf de type 06 ayant muté;X;X;X;X;X;;
+disposition_parcelle;27;dcnt07;surface de suf de type 07 ayant muté;X;X;X;X;X;;
+disposition_parcelle;28;dcnt08;surface de suf de type 08 ayant muté;X;X;X;X;X;;
+disposition_parcelle;29;dcnt09;surface de suf de type 09 ayant muté;X;X;X;X;X;;
+disposition_parcelle;30;dcnt10;surface de suf de type 10 ayant muté;X;X;X;X;X;;
+disposition_parcelle;31;dcnt11;surface de suf de type 11 ayant muté;X;X;X;X;X;;
+disposition_parcelle;32;dcnt12;surface de suf de type 12 ayant muté;X;X;X;X;X;;
+disposition_parcelle;33;dcnt13;surface de suf de type 13 ayant muté;X;X;X;X;X;;
+disposition_parcelle;34;dcntsol;surface de suf de type sol ayant muté;X;X;X;X;X;;
+disposition_parcelle;35;dcntagri;surface de suf de type agricole ayant muté;X;X;X;X;X;;
+disposition_parcelle;36;dcntnat;surface de suf de type naturel ayant muté;X;X;X;X;X;;
+disposition_parcelle;37;ffidcpv;identifiant du compte communal des vendeurs (issue des Fichiers fonciers);;X;X;X;X;;
+disposition_parcelle;38;fiabilitev;code de fiabilité de rapatriement des vendeurs depuis les Fichiers fonciers (0 à 3);;X;X;X;X;;
+disposition_parcelle;39;l_idv;identifiants de la table acheteur_vendeur qui correspondent aux vendeurs;;X;X;X;X;;
+disposition_parcelle;40;nbdroiprov;nombre de droits de type 'propriétaire' associés au compte communal des vendeurs;;X;X;X;X;;
+disposition_parcelle;41;l_nomv;noms des vendeurs (anonymisés pour les personnes physiques);;X;X;X;X;;
+disposition_parcelle;42;nbdroigesv;nombre de droits de type 'gestionnaire' associés au compte communal des vendeurs;;X;X;X;X;;
+disposition_parcelle;43;l_nomgesv;noms des gestionnaires du compte communal des vendeurs;;X;X;X;X;;
+disposition_parcelle;44;codtypprov;code de typologie de propriétaire pour les vendeurs (typologie Cerema);;X;X;X;X;;catpro2
+disposition_parcelle;45;ffidcpa;identifiant du compte communal de l'acheteur (issue des Fichiers fonciers);;X;X;X;X;;
+disposition_parcelle;46;fiabilitea;code de fiabilité de rapatriement des acheteurs depuis les Fichiers fonciers (0 à 4);;X;X;X;X;;
+disposition_parcelle;47;l_ida;identifiants de la table acheteur_vendeur qui correspondent aux acheteurs;;X;X;X;X;;
+disposition_parcelle;48;nbdroiproa;nombre de droits de type 'propriétaire' associés au compte communal des acheteurs;;X;X;X;X;;
+disposition_parcelle;49;l_noma;noms des acheteurs (anonymisés pour les personnes physiques);;X;X;X;X;;
+disposition_parcelle;50;nbdroigesa;nombre de droits de type 'gestionnaire' associés au compte communal des acheteurs;;X;X;X;X;;
+disposition_parcelle;51;l_nomgesa;noms des gestionnaires du compte communal des acheteurs;;X;X;X;X;;
+disposition_parcelle;52;codtypproa;code de typologie de propriétaire pour les acheteurs (typologie Cerema);;X;X;X;X;;catpro2
+disposition_parcelle;53;ffdatemut;date de signature de l'acte dans les Fichiers fonciers;;X;X;X;;;jdatath
+disposition_parcelle;54;exactffdvf;Vrai si la date de mutation dans DVF correspond avec la date de mutation des Fichiers fonciers;;X;X;X;;;
+disposition_parcelle;55;ffdatepre;date de mutation précédente dans les Fichiers fonciers;;;;;X;;
+disposition_parcelle;56;stabilitep;code d'évaluation de la stabilité de la parcelle (évolution sous le vendeur puis sous l'acheteur);;X;X;X;X;;
+disposition_parcelle;57;ffcodinsee;code Insee de la commune;;X;X;X;X;;
+disposition_parcelle;58;ffcommune;libellé de la commune;;X;X;X;X;;
+disposition_parcelle;59;ffnovoie;numéro de la voie;;X;X;X;X;;
+disposition_parcelle;60;ffbtq;indice de répétition;;X;X;X;X;;
+disposition_parcelle;61;ffvoie;libellé de la voie;;X;X;X;X;;
+disposition_parcelle;62;fftyppdl;type de division en lot;;X;X;X;X;;ctpdl
+disposition_parcelle;63;ffsparc;surface de la parcelle (issu des Fichiers fonciers);;X;X;X;X;;dcntpa
+disposition_parcelle;64;ffsterr;surface totale des subdivisions fiscales (issu des Fichiers fonciers);;X;X;X;X;;ssuf
+disposition_parcelle;65;ffdcnt01;surface de suf de type 01 (issu des Fichiers fonciers);;X;X;X;X;;dcnt01
+disposition_parcelle;66;ffdcnt02;surface de suf de type 02 (issu des Fichiers fonciers);;X;X;X;X;;dcnt02
+disposition_parcelle;67;ffdcnt03;surface de suf de type 03 (issu des Fichiers fonciers);;X;X;X;X;;dcnt03
+disposition_parcelle;68;ffdcnt04;surface de suf de type 04 (issu des Fichiers fonciers);;X;X;X;X;;dcnt04
+disposition_parcelle;69;ffdcnt05;surface de suf de type 05 (issu des Fichiers fonciers);;X;X;X;X;;dcnt05
+disposition_parcelle;70;ffdcnt06;surface de suf de type 06 (issu des Fichiers fonciers);;X;X;X;X;;dcnt06
+disposition_parcelle;71;ffdcnt07;surface de suf de type 07 (issu des Fichiers fonciers);;X;X;X;X;;dcnt07
+disposition_parcelle;72;ffdcnt08;surface de suf de type 08 (issu des Fichiers fonciers);;X;X;X;X;;dcnt08
+disposition_parcelle;73;ffdcnt09;surface de suf de type 09 (issu des Fichiers fonciers);;X;X;X;X;;dcnt09
+disposition_parcelle;74;ffdcnt10;surface de suf de type 10 (issu des Fichiers fonciers);;X;X;X;X;;dcnt10
+disposition_parcelle;75;ffdcnt11;surface de suf de type 11 (issu des Fichiers fonciers);;X;X;X;X;;dcnt11
+disposition_parcelle;76;ffdcnt12;surface de suf de type 12 (issu des Fichiers fonciers);;X;X;X;X;;dcnt12
+disposition_parcelle;77;ffdcnt13;surface de suf de type 13 (issu des Fichiers fonciers);;X;X;X;X;;dcnt13
+disposition_parcelle;78;ffdcntsol;surface de suf de type sol (issu des Fichiers fonciers);;X;X;X;X;;dcntsol
+disposition_parcelle;79;ffdcntagri;surface de suf de type agricole (issu des Fichiers fonciers);;X;X;X;X;;dcntagri
+disposition_parcelle;80;ffdcntnat;surface de suf de type naturel (issu des Fichiers fonciers);;X;X;X;X;;dcntnat
+disposition_parcelle;81;ffparcbati;Vrai si la parcelle est batie;;X;X;X;X;;nlocal
+disposition_parcelle;82;nbcstloc;nombre de locaux construits après la vente;;;X;X;X;;
+disposition_parcelle;83;nbcstsoc;nombre de logements sociaux (repérés par exonération) construits après la vente;;;X;X;X;;
+disposition_parcelle;84;nbcstmai;nombre de maisons construites après la vente;;;X;X;X;;
+disposition_parcelle;85;nbcstapt;nombre d'appartements construits après la vente;;;X;X;X;;
+disposition_parcelle;86;nbcstact;nombre de locaux d'activité construits après la vente;;;X;X;X;;
+disposition_parcelle;87;l_idcstloc;identifiants des locaux construits après la vente;;;X;X;X;;
+disposition_parcelle;88;nbcstloc4;nombre de locaux construits sous l'acheteur dans une limite de 4 ans;;;X;X;X;;
+disposition_parcelle;89;nbcstsoc4;nombre de logements sociaux (repérés par exonération) construits sous l'acheteur dans une limite de 4 ans;;;X;X;X;;
+disposition_parcelle;90;nbcstmai4;nombre de maisons construites sous l'acheteur dans une limite de 4 ans;;;X;X;X;;
+disposition_parcelle;91;nbcstapt4;nombre d'appartements construits sous l'acheteur dans une limite de 4 ans;;;X;X;X;;
+disposition_parcelle;92;nbcstact4;nombre de locaux d'activité construits sous l'acheteur dans une limite de 4 ans;;;X;X;X;;
+disposition_parcelle;93;l_idcstloc4;identifiants des locaux construits sous l'acheteur dans une limite de 4 ans;;;X;X;X;;
+disposition_parcelle;94;ffanref;année du millésime Fichiers fonciers permettant la caractérisation de la parcelle;;X;X;X;X;;
+disposition_parcelle;95;ffanvend;année du millésime Fichiers fonciers permettant la caractérisation des vendeurs de la parcelle;;X;X;X;X;;
+disposition_parcelle;96;ffanach;année du millésime Fichiers fonciers permettant la caractérisation des acheteurs de la parcelle;;X;X;X;X;;
+disposition_parcelle;97;geomloc;géométrie du localisant de la parcelle;;X;X;X;X;;
+disposition_parcelle;98;geompar;géométrie du contour de la parcelle;;X;X;X;X;;
+disposition_parcelle;99;srcgeom;source de la géométrie;;X;X;X;X;;
+disposition_parcelle;100;parcvect;Vrai si la parcelle est vectorisée;;X;X;X;X;;

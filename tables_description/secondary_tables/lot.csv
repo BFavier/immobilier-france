@@ -1,0 +1,8 @@
+Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
+lot;1;iddispolot;identifiant pour clef primaire;X;X;X;X;X;PK;
+lot;2;iddispopar;identifiant de la table disposition_parcelle;X;X;X;X;X;U;
+lot;3;idmutation;identifiant de clef primaire de la table mutation;X;X;X;X;X;;
+lot;4;iddispoloc;identifiant de la table local;X;X;X;X;X;U;
+lot;5;nolot;numéro du lot;X;X;X;X;X;U;
+lot;6;scarrez;surface Loi Carrez du lot;X;X;X;X;X;U;
+lot;7;coddep;code du département;X;X;X;X;X;C;

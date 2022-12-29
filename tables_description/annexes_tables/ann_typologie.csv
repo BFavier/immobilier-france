@@ -1,0 +1,13 @@
+Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
+ann_typologie;1;codtypbien;code de la typologie des biens du GnDVF;X;;X;X;X;PK;
+ann_typologie;2;libtypbien;libellé de la typologie des biens du GnDVF;X;;X;X;X;;
+ann_typologie;3;libniv5;libellé du niveau 5 de la typologie des biens;X;;X;X;X;;
+ann_typologie;4;niv5;code du niveau 5 de la typologie des biens;X;;X;X;X;;
+ann_typologie;5;libniv4;libellé du niveau 4 de la typologie des biens;X;;X;X;X;;
+ann_typologie;6;niv4;code du niveau 4 de la typologie des biens;X;;X;X;X;;
+ann_typologie;7;libniv3;libellé du niveau 3 de la typologie des biens;X;;X;X;X;;
+ann_typologie;8;niv3;code du niveau 3 de la typologie des biens;X;;X;X;X;;
+ann_typologie;9;libniv2;libellé du niveau 2 de la typologie des biens;X;;X;X;X;;
+ann_typologie;10;niv2;code du niveau 2 de la typologie des biens;X;;X;X;X;;
+ann_typologie;11;libniv1;libellé du niveau 1 de la typologie des biens;X;;X;X;X;;
+ann_typologie;12;niv1;code du niveau 1 de la typologie des biens;X;;X;X;X;;

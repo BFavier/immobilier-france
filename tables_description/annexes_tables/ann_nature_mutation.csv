@@ -1,0 +1,3 @@
+Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
+ann_nature_mutation;1;idnatmut;identifiant de clef primaire de la table ann_nature_mutation;X;X;X;X;X;PK;
+ann_nature_mutation;2;libnatmut;libellé de la nature de mutation;X;X;X;X;X;U;

@@ -1,0 +1,5 @@
+Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
+adresse_dispoparc;1;idadresse;identifiant de la table adresse;X;X;X;X;X;;
+adresse_dispoparc;2;iddispopar;identifiant de la table disposition_parcelle;X;X;X;X;X;;
+adresse_dispoparc;3;coddep;code du département;X;X;X;X;X;C;
+adresse_dispoparc;4;idmutation;identifiant de clef primaire de la table mutation;X;X;X;X;X;;

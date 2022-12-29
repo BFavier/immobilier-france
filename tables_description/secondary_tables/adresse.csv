@@ -1,0 +1,11 @@
+Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
+adresse;1;idadresse;identifiant pour clef primaire;X;X;X;X;X;PK;
+adresse;2;novoie;numéro de la voie;X;X;X;X;X;;
+adresse;3;btq;indice de répétition;X;X;X;X;X;;
+adresse;4;typvoie;type de voie;X;X;X;X;X;;
+adresse;5;codvoie;code de la voie;X;X;X;X;X;;
+adresse;6;voie;libellé de la voie;X;X;X;X;X;;
+adresse;7;codepostal;code postal;X;X;X;X;X;;
+adresse;8;commune;libellé de la commune;X;X;X;X;X;;
+adresse;9;idadrinvar;identifiant invariant de la table adresse;X;X;X;X;X;U;
+adresse;10;coddep;code du département;X;X;X;X;X;C;
