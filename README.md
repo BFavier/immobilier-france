@@ -41,7 +41,7 @@ You can list the existing database with the *\l* command, connect to the *dvf* d
 
 The latest version of the dump is available for download [here](https://cerema.app.box.com/v/dvfplus-opendata). The data to download is located in the *sql* folder, and then in the folder of the appropriate region name (or *National* for the whole country). The file might be cut in several parts that needs to be uncompressed using the [7zip](https://www.7-zip.org/download.html) tool. It should be uncompressed as a folder placed at the root of the repository. Its name should be similar to **DVFPlus_8-0_SQL_LAMB93_R084-ED222**, and it should contain a subfolder **1_DONNEES_LIVRAISON** containing sql files.
 
-The only step needed to import the dump into the new database created earlyer is to execute the **1_import_database.bat** script. Once the execution finished, the imported tables can be visualized with the following command lines:
+The only step needed to import the dump into the new database created earlier is to execute the **1_import_database.bat** script. Once the execution finished, the imported tables can be visualized with the following command lines:
 
 ~~~
 psql -U postgres
