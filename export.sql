@@ -1,6 +1,6 @@
 CREATE LOCAL TEMPORARY VIEW valid_mutations AS
 (
-    SELECT idmutation, datemut AS "date", valeurfonc AS "price"
+    SELECT idmutation, vefa, datemut AS "date", valeurfonc AS "price"
     FROM dvf_d69.mutation
     WHERE (nblocmai + nblocapt <= 1)
 );
