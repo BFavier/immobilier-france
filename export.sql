@@ -7,13 +7,14 @@ CREATE LOCAL TEMPORARY VIEW valid_mutations AS
 
 CREATE LOCAL TEMPORARY VIEW adresse AS
 (
-    SELECT *
+    SELECT idadresse, (novoie || btq || " " || typvoie || " " || voie) AS "addresse", commune AS "city", codepostal AS "zip_code"
     FROM dvf_d69.adresse
 );
 
 CREATE LOCAL TEMPORARY VIEW habitations AS
 (
-    SELECT idmutation, libtyploc AS "housing_type",
+    SELECT idmutation, iddispoloc,
+        libtyploc AS "housing_type",
         nbpprinc AS "n_rooms",
         sbati AS "housing_surface",
         ST_AsText(geomloc) AS "coordinates"
