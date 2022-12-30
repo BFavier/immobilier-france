@@ -21,14 +21,14 @@ CREATE LOCAL TEMPORARY VIEW habitations AS
         sbati AS "housing_surface",
         ST_AsText(geomloc) AS "coordinates"
     FROM :schema.local
-    WHERE (codtyploc <=2) AND (idmutation IN (SELECT idmutation FROM valid_mutations))
+    WHERE (codtyploc <=2)
 );
 
 CREATE LOCAL TEMPORARY VIEW dependances AS
 (
     SELECT MAX(idmutation) AS "idmutation", array_agg(sbati) AS "annexe_surfaces"
     FROM :schema.local
-    WHERE (codtyploc = 3) AND (idmutation IN (SELECT idmutation FROM valid_mutations))
+    WHERE (codtyploc = 3) AND (sbati IS NOT NULL) AND (sbati > 0)
     GROUP BY idmutation
 );
 
@@ -36,7 +36,7 @@ CREATE LOCAL TEMPORARY VIEW locaux_commerciaux AS
 (
     SELECT MAX(idmutation) AS "idmutation", array_agg(sbati) AS "commercial_lot_surfaces"
     FROM :schema.local
-    WHERE (codtyploc = 4) AND (idmutation IN (SELECT idmutation FROM valid_mutations))
+    WHERE (codtyploc = 4) AND (sbati IS NOT NULL) AND (sbati > 0)
     GROUP BY idmutation
 );
 
@@ -47,21 +47,29 @@ CREATE LOCAL TEMPORARY VIEW parcelles AS
         array_agg(dcntsol) AS "ground_surfaces",
         array_agg(dcntnat) AS "nature_surfaces"
     FROM :schema.disposition_parcelle
-    WHERE (parcvendue) AND (idmutation IN (SELECT idmutation FROM valid_mutations))
+    WHERE (parcvendue)
     GROUP BY idmutation
+);
+
+CREATE LOCAL TEMPORARY VIEW unique_lots AS
+(
+    SELECT MAX(idmutation) AS "idmutation", MAX(nolot) AS "nolot", MAX(scarrez) AS "scarrez"
+    FROM :schema.lot
+    GROUP BY (idmutation, nolot)
 );
 
 CREATE LOCAL TEMPORARY VIEW carrez AS
 (
     SELECT MAX(idmutation) AS "idmutation", array_agg(scarrez) AS "carrez_surfaces"
-    FROM :schema.lot
-    WHERE idmutation IN (SELECT idmutation FROM valid_mutations)
+    FROM unique_lots
+    WHERE (scarrez IS NOT NULL) AND (scarrez > 0)
     GROUP BY idmutation
 );
 
 CREATE LOCAL TEMPORARY VIEW joined AS
 (
-    SELECT vm.transaction_date, vm.price, a.city, a.zip_code, a.address,
+    SELECT vm.idmutation AS "transaction_id",
+        vm.transaction_date, vm.price, a.city, a.zip_code, a.address,
         h.housing_type, h.n_rooms, h.housing_surface, h.coordinates,
         d.annexe_surfaces, lc.commercial_lot_surfaces, p.field_surfaces,
         p.ground_surfaces, p.nature_surfaces, c.carrez_surfaces
@@ -78,6 +86,7 @@ CREATE LOCAL TEMPORARY VIEW joined AS
     ON vm.idmutation = p.idmutation
     LEFT JOIN carrez AS c
     ON vm.idmutation = c.idmutation
+    ORDER BY vm.transaction_date
 );
 
 COPY (SELECT * FROM joined) TO :export_path (DELIMITER ',', FORMAT CSV, ENCODING 'UTF-8', HEADER);
