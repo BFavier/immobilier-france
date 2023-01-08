@@ -19,7 +19,7 @@ CREATE LOCAL TEMPORARY VIEW habitations AS
         libtyploc AS "housing_type",
         nbpprinc AS "n_rooms",
         sbati AS "housing_surface",
-        ST_AsText(geomloc) AS "coordinates"
+        ST_AsText(ST_Transform(geomloc, 4326)) AS "coordinates"
     FROM :schema.local
     WHERE (codtyploc <=2)
 );
