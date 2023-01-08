@@ -19,7 +19,7 @@ CREATE LOCAL TEMPORARY VIEW habitations AS
         libtyploc AS "housing_type",
         nbpprinc AS "n_rooms",
         sbati AS "housing_surface",
-        ST_AsText(ST_Transform(geomloc, 4326)) AS "coordinates"
+        ST_Transform(geomloc, 4326) AS "coordinates"
     FROM :schema.local
     WHERE (codtyploc <=2)
 );
@@ -70,7 +70,8 @@ CREATE LOCAL TEMPORARY VIEW joined AS
 (
     SELECT vm.idmutation AS "transaction_id",
         vm.transaction_date, vm.price, a.city, a.zip_code, a.address,
-        h.housing_type, h.n_rooms, h.housing_surface, h.coordinates,
+        h.housing_type, h.n_rooms, h.housing_surface,
+        ST_Y(h.coordinates) AS "latitude", ST_X(h.coordinates) AS "longitude",
         d.annexe_surfaces, lc.commercial_lot_surfaces, p.field_surfaces,
         p.ground_surfaces, p.nature_surfaces, c.carrez_surfaces
     FROM valid_mutations AS vm
