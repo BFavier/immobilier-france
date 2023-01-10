@@ -15,7 +15,7 @@ CREATE LOCAL TEMPORARY VIEW adresse AS
 
 CREATE LOCAL TEMPORARY VIEW habitations AS
 (
-    SELECT idmutation, iddispoloc,
+    SELECT idmutation, iddispoloc, idpar AS "parcelle_id",
         libtyploc AS "housing_type",
         nbpprinc AS "n_rooms",
         sbati AS "housing_surface",
@@ -86,7 +86,7 @@ CREATE LOCAL TEMPORARY VIEW joined AS
 (
     SELECT vm.idmutation AS "transaction_id",
         vm.transaction_date, vm.price, a.city, a.zip_code, a.address,
-        h.housing_type, h.n_rooms, h.housing_surface,
+        h.housing_type, h.n_rooms, h.housing_surface, h.parcelle_id,
         ST_Y(h.coordinates) AS "latitude", ST_X(h.coordinates) AS "longitude",
         d.annexe_surfaces, lc.commercial_lot_surfaces, p_agr.field_surfaces,
         p_sol.ground_surfaces, p_nat.nature_surfaces, c.carrez_surfaces
