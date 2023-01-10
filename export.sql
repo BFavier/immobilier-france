@@ -40,14 +40,30 @@ CREATE LOCAL TEMPORARY VIEW locaux_commerciaux AS
     GROUP BY idmutation
 );
 
-CREATE LOCAL TEMPORARY VIEW parcelles AS
+CREATE LOCAL TEMPORARY VIEW parcelles_agr AS
 (
     SELECT MAX(idmutation) AS "idmutation",
-        array_agg(dcntagri) AS "field_surfaces",
-        array_agg(dcntsol) AS "ground_surfaces",
+        array_agg(dcntagri) AS "field_surfaces"
+    FROM :schema.disposition_parcelle
+    WHERE (parcvendue) and (dcntagri IS NOT NULL) and (dcntagri > 0)
+    GROUP BY idmutation
+);
+
+CREATE LOCAL TEMPORARY VIEW parcelles_sol AS
+(
+    SELECT MAX(idmutation) AS "idmutation",
+        array_agg(dcntsol) AS "ground_surfaces"
+    FROM :schema.disposition_parcelle
+    WHERE (parcvendue) and (dcntsol IS NOT NULL) and (dcntsol > 0)
+    GROUP BY idmutation
+);
+
+CREATE LOCAL TEMPORARY VIEW parcelles_nat AS
+(
+    SELECT MAX(idmutation) AS "idmutation",
         array_agg(dcntnat) AS "nature_surfaces"
     FROM :schema.disposition_parcelle
-    WHERE (parcvendue)
+    WHERE (parcvendue) and (dcntnat IS NOT NULL) and (dcntnat > 0)
     GROUP BY idmutation
 );
 
@@ -72,8 +88,8 @@ CREATE LOCAL TEMPORARY VIEW joined AS
         vm.transaction_date, vm.price, a.city, a.zip_code, a.address,
         h.housing_type, h.n_rooms, h.housing_surface,
         ST_Y(h.coordinates) AS "latitude", ST_X(h.coordinates) AS "longitude",
-        d.annexe_surfaces, lc.commercial_lot_surfaces, p.field_surfaces,
-        p.ground_surfaces, p.nature_surfaces, c.carrez_surfaces
+        d.annexe_surfaces, lc.commercial_lot_surfaces, p_agr.field_surfaces,
+        p_sol.ground_surfaces, p_nat.nature_surfaces, c.carrez_surfaces
     FROM valid_mutations AS vm
     LEFT JOIN adresse AS a
     ON vm.idmutation = a.idmutation
@@ -83,8 +99,12 @@ CREATE LOCAL TEMPORARY VIEW joined AS
     ON vm.idmutation = d.idmutation
     LEFT JOIN locaux_commerciaux AS lc
     ON vm.idmutation = lc.idmutation
-    LEFT JOIN parcelles AS p
-    ON vm.idmutation = p.idmutation
+    LEFT JOIN parcelles_agr AS p_agr
+    ON vm.idmutation = p_agr.idmutation
+    LEFT JOIN parcelles_sol AS p_sol
+    ON vm.idmutation = p_sol.idmutation
+    LEFT JOIN parcelles_nat AS p_nat
+    ON vm.idmutation = p_nat.idmutation
     LEFT JOIN carrez AS c
     ON vm.idmutation = c.idmutation
     ORDER BY vm.transaction_date
