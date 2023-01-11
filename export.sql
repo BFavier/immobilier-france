@@ -15,7 +15,7 @@ CREATE LOCAL TEMPORARY VIEW adresse AS
 
 CREATE LOCAL TEMPORARY VIEW habitations AS
 (
-    SELECT idmutation, iddispoloc, idpar AS "parcelle_id",
+    SELECT idmutation, iddispoloc, idpar AS "cadastre_id",
         libtyploc AS "housing_type",
         nbpprinc AS "n_rooms",
         sbati AS "housing_surface",
@@ -28,7 +28,7 @@ CREATE LOCAL TEMPORARY VIEW dependances AS
 (
     SELECT MAX(idmutation) AS "idmutation", array_agg(sbati) AS "annexe_surfaces"
     FROM :schema.local
-    WHERE (codtyploc = 3) AND (sbati IS NOT NULL) AND (sbati > 0)
+    WHERE (codtyploc = 3) -- AND (sbati IS NOT NULL) AND (sbati > 0)
     GROUP BY idmutation
 );
 
@@ -36,7 +36,7 @@ CREATE LOCAL TEMPORARY VIEW locaux_commerciaux AS
 (
     SELECT MAX(idmutation) AS "idmutation", array_agg(sbati) AS "commercial_lot_surfaces"
     FROM :schema.local
-    WHERE (codtyploc = 4) AND (sbati IS NOT NULL) AND (sbati > 0)
+    WHERE (codtyploc = 4) -- AND (sbati IS NOT NULL) AND (sbati > 0)
     GROUP BY idmutation
 );
 
@@ -45,7 +45,7 @@ CREATE LOCAL TEMPORARY VIEW parcelles_agr AS
     SELECT MAX(idmutation) AS "idmutation",
         array_agg(dcntagri) AS "field_surfaces"
     FROM :schema.disposition_parcelle
-    WHERE (parcvendue) and (dcntagri IS NOT NULL) and (dcntagri > 0)
+    WHERE (parcvendue) -- and (dcntagri IS NOT NULL) and (dcntagri > 0)
     GROUP BY idmutation
 );
 
@@ -54,7 +54,7 @@ CREATE LOCAL TEMPORARY VIEW parcelles_sol AS
     SELECT MAX(idmutation) AS "idmutation",
         array_agg(dcntsol) AS "ground_surfaces"
     FROM :schema.disposition_parcelle
-    WHERE (parcvendue) and (dcntsol IS NOT NULL) and (dcntsol > 0)
+    WHERE (parcvendue) -- and (dcntsol IS NOT NULL) and (dcntsol > 0)
     GROUP BY idmutation
 );
 
@@ -63,7 +63,7 @@ CREATE LOCAL TEMPORARY VIEW parcelles_nat AS
     SELECT MAX(idmutation) AS "idmutation",
         array_agg(dcntnat) AS "nature_surfaces"
     FROM :schema.disposition_parcelle
-    WHERE (parcvendue) and (dcntnat IS NOT NULL) and (dcntnat > 0)
+    WHERE (parcvendue) -- and (dcntnat IS NOT NULL) and (dcntnat > 0)
     GROUP BY idmutation
 );
 
@@ -86,7 +86,7 @@ CREATE LOCAL TEMPORARY VIEW joined AS
 (
     SELECT vm.idmutation AS "transaction_id",
         vm.transaction_date, vm.price, a.city, a.zip_code, a.address,
-        h.housing_type, h.n_rooms, h.housing_surface, h.parcelle_id,
+        h.housing_type, h.n_rooms, h.housing_surface, h.cadastre_id,
         ST_Y(h.coordinates) AS "latitude", ST_X(h.coordinates) AS "longitude",
         d.annexe_surfaces, lc.commercial_lot_surfaces, p_agr.field_surfaces,
         p_sol.ground_surfaces, p_nat.nature_surfaces, c.carrez_surfaces
