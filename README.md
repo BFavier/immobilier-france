@@ -56,3 +56,6 @@ And then inside of psql:
 
 ## IV) Export the subset of the database
 
+# IRCOM dataset
+
+https://www.data.gouv.fr/fr/datasets/limpot-sur-le-revenu-par-collectivite-territoriale-ircom/
