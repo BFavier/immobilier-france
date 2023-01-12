@@ -7,9 +7,9 @@ CREATE LOCAL TEMPORARY VIEW valid_mutations AS
 
 CREATE LOCAL TEMPORARY VIEW adresse AS
 (
-    SELECT l.idmutation, a.commune AS "ville", a.codepostal AS "departement",
+    SELECT l.idmutation, a.commune AS "ville", a.codepostal AS "code_postal",
         CONCAT(a.novoie, a.btq, ' ', a.typvoie, ' ', a.voie) AS "adresse",
-        p.codcomm AS "id_ville"
+        p.codcomm AS "id_ville", p.coddep AS "departement"
     FROM :schema.adresse AS a, :schema.adresse_local AS al, :schema.local AS l, :schema.parcelle AS p
     WHERE (l.codtyploc <= 2) AND (a.idadresse = al.idadresse) AND (al.iddispoloc = l.iddispoloc) AND (p.idpar = l.idpar)
 );
@@ -86,9 +86,9 @@ CREATE LOCAL TEMPORARY VIEW carrez AS
 CREATE LOCAL TEMPORARY VIEW joined AS
 (
     SELECT vm.idmutation AS "id_transaction",
-        vm.date_transaction, vm.prix, a.id_ville, a.ville, a.departement, a.adresse,
+        vm.date_transaction, vm.prix, a.departement, a.id_ville, a.ville, a.code_postal, a.adresse,
         h.type_batiment, vm.vefa::boolean, h.n_pieces, h.surface_habitable,
-        c.surface_habitable_carrez,
+        COALESCE(c.surface_habitable_carrez, array[]::numeric[]) AS "surface_habitable_carrez",
         h.id_parcelle_cadastre,
         ST_Y(h.coordinates) AS "latitude", ST_X(h.coordinates) AS "longitude",
         COALESCE(d.surface_dependances, array[]::numeric[]) AS "surface_dependances",
