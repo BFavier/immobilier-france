@@ -87,10 +87,15 @@ CREATE LOCAL TEMPORARY VIEW joined AS
 (
     SELECT vm.idmutation AS "id_transaction",
         vm.date_transaction, vm.prix, a.id_ville, a.ville, a.departement, a.adresse,
-        h.type_batiment, vm.vefa, h.n_pieces, h.surface_habitable, c.surface_habitable_carrez, h.id_parcelle_cadastre,
+        h.type_batiment, vm.vefa::boolean, h.n_pieces, h.surface_habitable,
+        c.surface_habitable_carrez,
+        h.id_parcelle_cadastre,
         ST_Y(h.coordinates) AS "latitude", ST_X(h.coordinates) AS "longitude",
-        d.surface_dependances, lc.surface_locaux_industriels, p_agr.surface_terrains_agricoles,
-        p_sol.surface_terrains_sols, p_nat.surface_terrains_nature
+        COALESCE(d.surface_dependances, array[]::numeric[]) AS "surface_dependances",
+        COALESCE(lc.surface_locaux_industriels, array[]::numeric[]) AS "surface_locaux_industriels",
+        COALESCE(p_agr.surface_terrains_agricoles, array[]::numeric[]) AS "surface_terrains_agricoles",
+        COALESCE(p_sol.surface_terrains_sols, array[]::numeric[]) AS "surface_terrains_sols",
+        COALESCE(p_nat.surface_terrains_nature, array[]::numeric[]) AS "surface_terrains_nature"
     FROM valid_mutations AS vm
     LEFT JOIN adresse AS a
     ON vm.idmutation = a.idmutation
