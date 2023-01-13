@@ -39,8 +39,8 @@ def reshape_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     tranches = tranches.apply(lambda series: pd.to_numeric(series, errors="coerce")).astype(pd.Int64Dtype()).reset_index()
     revenu_fiscal_total = pd.to_numeric(revenu_fiscal_total_keuros.rename(columns={"TOTAL": "Total"})["Total"], errors="coerce").to_numpy()
     impot_total = pd.to_numeric(impot_total_keuros.rename(columns={"TOTAL": "Total"})["Total"], errors="coerce").to_numpy()
-    revenu_fiscal_moyen = pd.DataFrame(data=1000*revenu_fiscal_total/tranches.n_foyers_fiscaux.to_numpy(), columns=["revenu_fiscal_moyen"])
-    montant_impot_moyen = pd.DataFrame(data=1000*impot_total/tranches.n_foyers_fiscaux.to_numpy(), columns=["montant_impot_moyen"])
+    revenu_fiscal_moyen = pd.DataFrame(data=1000*revenu_fiscal_total/tranches.n_foyers_fiscaux.to_numpy(), columns=["revenu_fiscal_moyen"]).astype(float)
+    montant_impot_moyen = pd.DataFrame(data=1000*impot_total/tranches.n_foyers_fiscaux.to_numpy(), columns=["montant_impot_moyen"]).astype(float)
     return pd.concat([tranches, revenu_fiscal_moyen, montant_impot_moyen], axis="columns")
 
 
