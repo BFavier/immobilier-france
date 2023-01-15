@@ -1,7 +1,0 @@
-Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
-disposition;1;iddispo;identifiant pour clef primaire;X;X;X;X;X;PK;
-disposition;2;idmutation;identifiant de clef primaire de la table mutation;X;X;X;X;X;U;
-disposition;3;nodispo;numéro de disposition;X;X;X;X;X;U;
-disposition;4;valeurfonc;prix ou évaluation déclarée dans le cadre d'une mutation onéreuse;X;X;X;X;X;;
-disposition;5;nblot;nombre total de lots dans la disposition;X;X;X;X;X;;
-disposition;6;coddep;code du département;X;X;X;X;X;C;

@@ -1,5 +1,0 @@
-Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
-mutation_article_cgi;1;idmutation;identifiant de clef primaire de la table mutation;X;X;X;X;X;PK;
-mutation_article_cgi;2;idartcgi;identifiant de la table annexe ann_cgi;X;X;X;X;X;PK;
-mutation_article_cgi;3;ordarticgi;numéro de l'ordre de l'article cgi;X;X;X;X;X;;
-mutation_article_cgi;4;coddep;code du département;X;X;X;X;X;C;

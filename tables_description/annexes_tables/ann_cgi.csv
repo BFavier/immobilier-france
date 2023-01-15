@@ -1,4 +1,0 @@
-Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
-ann_cgi;1;idartcgi;;X;X;X;X;X;PK;
-ann_cgi;2;artcgi;;X;X;X;X;X;U;
-ann_cgi;3;libartcgi;;X;X;X;X;X;;

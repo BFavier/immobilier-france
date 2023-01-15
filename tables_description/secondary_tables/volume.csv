@@ -1,6 +1,0 @@
-Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
-volume;1;iddispovol;identifiant pour clef primaire;X;X;X;X;X;PK;
-volume;2;iddispopar;identifiant de la table disposition_parcelle;X;X;X;X;X;U;
-volume;3;idmutation;identifiant de clef primaire de la table mutation;X;X;X;X;X;;
-volume;4;novolume;numéro de volume;X;X;X;X;X;U;
-volume;5;coddep;code du département;X;X;X;X;X;C;

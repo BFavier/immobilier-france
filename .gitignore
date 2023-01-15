@@ -1,4 +1,4 @@
 DVFPlus*
-IRCOM/*.zip
-tables/*.csv
-tables/*.npz
+data/IRCOM/*.zip
+export/*.csv
+export/*.npz

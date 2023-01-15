@@ -58,4 +58,34 @@ And then inside of psql:
 
 # IRCOM dataset
 
+Base de l'impot sur le revenu et des revenus fiscaux par commune
+
 https://www.data.gouv.fr/fr/datasets/limpot-sur-le-revenu-par-collectivite-territoriale-ircom/
+
+# LOVAC
+
+Base des logements vacants du parc privé (nombre de logements et nombre de logements vacants)
+
+https://www.data.gouv.fr/fr/datasets/logements-vacants-du-parc-prive-par-anciennete-de-vacance-par-commune-et-par-epci/
+
+# TEC00104
+
+Taux endettement des ménages
+
+https://ec.europa.eu/eurostat/fr/web/products-datasets/-/TEC00104
+
+# Taux d'emprunt
+
+Cliquer sur "Series" dans la catégorie "crédits immobiliers"
+
+https://www.banque-france.fr/statistiques/taux-et-cours/taux-dusure
+
+ou directement
+
+https://webstat.banque-france.fr/fr/#/node/5385789?SERIES_KEY=MIR1.Q.FR.R.A22FRF.Q.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRF.R.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRF.S.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRR.A.C.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRV.A.C.A.2254FR.EUR.N
+
+# Actifs financiers des ménages
+
+Apport disponible
+
+https://data.oecd.org/fr/hha/actifs-financiers-des-menages.htm#indicator-chart

@@ -1,8 +1,0 @@
-Table;Position;Nom;Description;DVF+;DV3F v1;DV3F v2;DV3F v3;DV3F v4;Contrainte;Correspondance FF
-parcelle;1;idparcelle;identifiant pour clef primaire;X;X;X;X;X;PK;
-parcelle;2;idpar;identifiant de la parcelle (idem Fichiers fonciers);X;X;X;X;X;U;
-parcelle;3;coddep;code du département;X;X;X;X;X;C;
-parcelle;4;codcomm;code insee de la commune;X;X;X;X;X;;
-parcelle;5;prefsect;prefixe de section de la parcelle;X;X;X;X;X;;
-parcelle;6;nosect;numéro de section de la parcelle;X;X;X;X;X;;
-parcelle;7;noplan;numéro de la parcelle;X;X;X;X;X;;
