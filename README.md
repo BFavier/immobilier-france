@@ -89,3 +89,8 @@ https://webstat.banque-france.fr/fr/#/node/5385789?SERIES_KEY=MIR1.Q.FR.R.A22FRF
 Apport disponible
 
 https://data.oecd.org/fr/hha/actifs-financiers-des-menages.htm#indicator-chart
+
+Le taux de change USD --> EUR peut être obtenu en tapant la formule suivante dans une cellule google sheet
+~~~
+=GOOGLEFINANCE("CURRENCY:USDEUR"; "price"; DATE(2014;1;1); DATE(2023;1;1); "DAILY")
+~~~

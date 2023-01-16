@@ -5,8 +5,8 @@ import pathlib
 import os
 
 path = pathlib.Path(__file__).parent
-ircom_path = path / "IRCOM"
-tables_path = path / "tables"
+ircom_path = path / "data" / "IRCOM"
+tables_path = path / "export"
 
 files = [file for file in os.listdir(ircom_path) if file.endswith(".zip")]
 years = [f[-8:-4] for f in files]

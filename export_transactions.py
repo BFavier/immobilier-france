@@ -4,7 +4,7 @@ import pathlib
 import os
 
 path = pathlib.Path(__file__).parent
-tables_path = path / "tables"
+tables_path = path / "export"
 # df = pd.read_csv(tables_path / "d01.csv")
 files = [f for f in os.listdir(tables_path) if f.startswith("d") and f.endswith(".csv") and f[1:-4].isnumeric()]
 columns = ["id_transaction", "date_transaction", "prix", "departement", "id_ville", "ville",
