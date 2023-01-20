@@ -74,7 +74,7 @@ Taux endettement des ménages
 
 https://ec.europa.eu/eurostat/fr/web/products-datasets/-/TEC00104
 
-# Taux d'emprunt
+# Taux d'intérets emprunts immobiliers
 
 Cliquer sur "Series" dans la catégorie "crédits immobiliers"
 
