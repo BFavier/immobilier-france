@@ -60,7 +60,7 @@ for file, year in zip(files[::-1], years[::-1]):
     sub = sub.rename(columns=columns)[list(columns.values())].replace("n.c.", float("nan"))
     sub = reshape_dataframe(sub)
     sub["date"] = year
-    df = pd.concat([df, sub[["departement", "id_ville", "ville",
+    df = pd.concat([df, sub[["date", "departement", "id_ville", "ville",
                              "n_foyers_fiscaux", "revenu_fiscal_moyen",
                              "montant_impot_moyen", "n_foyers_0k_10k",
                              "n_foyers_10k_12k", "n_foyers_12k_15k",
@@ -70,7 +70,9 @@ for file, year in zip(files[::-1], years[::-1]):
     print(year)
 df["revenu_fiscal_moyen"] = df.revenu_fiscal_moyen.astype(pd.Float64Dtype())
 df["montant_impot_moyen"] = df.montant_impot_moyen.astype(pd.Float64Dtype())
-df.round(decimals=2).to_csv(tables_path / "population.csv", index=False, float_format="%.2f")
+df.drop(index=df[df["departement"] == "B31"].index, inplace=True)
+df["departement"] = [d if d.startswith("97") else d[:-1] for d in df["departement"]]
+df.round(decimals=2).to_csv(tables_path / "foyers_fiscaux.csv", index=False, float_format="%.2f")
 
 if __name__ == "__main__":
     import IPython
