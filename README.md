@@ -94,3 +94,12 @@ Le taux de change USD --> EUR peut être obtenu en tapant la formule suivante da
 ~~~
 =GOOGLEFINANCE("CURRENCY:USDEUR"; "price"; DATE(2014;1;1); DATE(2023;1;1); "DAILY")
 ~~~
+
+# Loyers au m2/mois par commune
+
+la base de données "carte des loyers"
+
+en 2018:
+https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2018/
+en 2022:
+https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2022/
