@@ -12,7 +12,7 @@ columns = ["id_transaction", "date_transaction", "prix", "departement", "id_vill
            "id_parcelle_cadastre", "latitude", "longitude", "surface_dependances",
            "surface_locaux_industriels", "surface_terrains_agricoles",
            "surface_terrains_sols", "surface_terrains_nature"]
-dtypes = [int, np.datetime64, float, int, int, str,
+dtypes = [int, np.datetime64, float, str, int, str,
           int, str, str, bool, int,
           int,
           str, float, float, str,
@@ -27,6 +27,8 @@ for file in files:
     print(file)
 df.dropna(axis="index", inplace=True)
 df.drop(columns=["surface_habitable_carrez"], inplace=True)
+df["vefa"] = (df["vefa"] == "t")
+df["departement"] = [f"{d:02}" for d in df["departement"]]
 arrays = {}
 for c, t in zip(columns, dtypes):
     print(c, t)
