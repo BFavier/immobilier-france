@@ -8,7 +8,7 @@ concat = []
 for year in os.listdir(data_path / "carte_loyers"):
     dir = data_path / "carte_loyers" / year
     files = {key: pd.read_csv(dir / next(iter(f for f in os.listdir(dir) if key in f and f.endswith(".csv"))),
-                              sep=";", encoding="latin-1")
+                              sep=";", encoding="latin-1", decimal=",")
      for key in ["app", "mai"]}
     columns = {"DEP": "departement",
                "INSEE_C": "id_ville",
