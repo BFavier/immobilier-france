@@ -92,7 +92,7 @@ https://data.oecd.org/fr/hha/actifs-financiers-des-menages.htm#indicator-chart
 
 Le taux de change USD --> EUR peut être obtenu en tapant la formule suivante dans une cellule google sheet
 ~~~
-=GOOGLEFINANCE("CURRENCY:USDEUR"; "price"; DATE(2014;1;1); DATE(2023;1;1); "DAILY")
+=GOOGLEFINANCE("CURRENCY:USDEUR"; "price"; DATE(2014;1;1); TODAY(); "DAILY")
 ~~~
 
 # Loyers au m2/mois par commune
