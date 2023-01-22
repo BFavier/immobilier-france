@@ -103,3 +103,7 @@ en 2018:
 https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2018/
 en 2022:
 https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2022/
+
+# Indice de Reference des Loyers (IRL)
+
+https://www.insee.fr/fr/statistiques/serie/001515333
