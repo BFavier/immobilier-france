@@ -1,4 +1,4 @@
-This repository is the open source of the "immobilier france dataset", hosted at [this adress](https://www.kaggle.com/datasets/benoitfavier/immobilier-france).
+This repository is the open source of the "immobilier france" dataset, hosted at [this adress](https://www.kaggle.com/datasets/benoitfavier/immobilier-france).
 
 # DVFplus
 
