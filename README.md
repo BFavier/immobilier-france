@@ -86,6 +86,8 @@ ou directement
 
 https://webstat.banque-france.fr/fr/#/node/5385789?SERIES_KEY=MIR1.Q.FR.R.A22FRF.Q.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRF.R.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRF.S.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRR.A.C.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRV.A.C.A.2254FR.EUR.N
 
+# Nombre nouveuax prêts immobiliers aux particuliers
+
 https://webstat.banque-france.fr/fr/#/quickview/SERIES_KEY/MIR1.M.FR.B.A2C.A.B.A.2251.EUR.N/node_EQU__AND_DATASET_EQU_MIR1_AND_periodSortOrder_EQU_DESC
 
 # Actifs financiers des ménages

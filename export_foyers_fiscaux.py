@@ -73,7 +73,3 @@ df["montant_impot_moyen"] = df.montant_impot_moyen.astype(pd.Float64Dtype())
 df.drop(index=df[df["departement"] == "B31"].index, inplace=True)
 df["departement"] = [d if d.startswith("97") else d[:-1] for d in df["departement"]]
 df.round(decimals=2).to_csv(tables_path / "foyers_fiscaux.csv", index=False, float_format="%.2f")
-
-if __name__ == "__main__":
-    import IPython
-    IPython.embed()

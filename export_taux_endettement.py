@@ -11,7 +11,3 @@ df.index.rename("date", inplace=True)
 df.reset_index(drop=False, inplace=True)
 df["date"] = df["date"].astype(int)
 df.to_csv(path / "export" / "taux_endettement.csv", index=False)
-
-if __name__ == "__main__":
-    import IPython
-    IPython.embed()

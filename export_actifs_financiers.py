@@ -30,6 +30,3 @@ df["euros_par_habitant"] = [usd/change[year] for usd, year in zip(df["USD_par_ha
 
 df[["date", "USD_par_habitant", "euros_par_habitant"]+fracs].to_csv(path / "export" / "actifs_financiers.csv", index=False)
 
-if __name__ == "__main__":
-    import IPython
-    IPython.embed()

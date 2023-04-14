@@ -1,8 +1,11 @@
 import pandas as pd
+import os
 import pathlib
 
 path = pathlib.Path(__file__).parent
-df = pd.read_excel(path / "data" / "LOVAC" / "logements-vacants-du-parc-prive-par-commune-au-01012020-lovac.xlsx",
+data_path = path / "data" / "LOVAC"
+file = sorted([f for f in os.listdir(data_path) if f.endswith(".xlsx")])[-1]
+df = pd.read_excel(data_path / file,
                    usecols=["INSEE_COM", "NOM_COM", "CODE_DEPT", "Nb_log_pp_2020", "Nb_logvac_pp_010119",
                             "Nb_log_pp_2021", "Nb_logvac_pp_010120"],
                    sheet_name="Données")
@@ -26,7 +29,3 @@ for year in years:
 new = pd.concat(concat)[["date", "departement", "id_ville", "ville", "n_logements", "n_logements_vacants"]]
 new["id_ville"] = [n[-3:] for n in new["id_ville"]]
 new.to_csv(path / "export" / "parc_immobilier.csv", index=False)
-
-if __name__ == "__main__":
-    import IPython
-    IPython.embed()

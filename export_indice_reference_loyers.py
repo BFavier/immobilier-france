@@ -18,7 +18,3 @@ df.dropna(subset=["IRL"], inplace=True)
 df["date"] = pd.to_datetime([format_date(d) for d in df["date"]], yearfirst=True)
 
 df[["date", "IRL"]].to_csv(path / "export" / "indice_reference_loyers.csv", index=False)
-
-if __name__ == "__main__":
-    import IPython
-    IPython.embed()

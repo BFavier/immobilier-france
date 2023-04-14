@@ -24,7 +24,3 @@ df = pd.read_csv(dataset_path / files[-1], skiprows=6,
                  sep=";", decimal=",")
 df["date"] = pd.to_datetime([format_date(d) for d in df["date"]], yearfirst=True)
 df.to_csv(path / "export" / "taux_interet.csv", index=False)
-
-if __name__ == "__main__":
-    import IPython
-    IPython.embed()

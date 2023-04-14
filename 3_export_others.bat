@@ -5,4 +5,5 @@ python ./export_loyers.py
 python ./export_parc_immobilier.py
 python ./export_taux_endettement.py
 python ./export_taux_interet.py
+python ./export_flux_nouveaux_emprunts.py
 python ./export_transactions.py

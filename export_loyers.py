@@ -23,7 +23,3 @@ for year in os.listdir(data_path / "carte_loyers"):
 df = pd.concat(concat)[["departement", "id_ville", "ville", "date", "loyer_m2_appartement", "loyer_m2_maison"]]
 df["id_ville"] = [str(id)[-3:] for id in df["id_ville"]]
 df.sort_values(["date", "departement", "id_ville"]).to_csv(path / "export" / "loyers.csv", index=False)
-
-if __name__ == "__main__":
-    import IPython
-    IPython.embed()
