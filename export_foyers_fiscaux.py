@@ -9,7 +9,7 @@ ircom_path = path / "data" / "IRCOM"
 tables_path = path / "export"
 
 files = [file for file in os.listdir(ircom_path) if file.endswith(".zip")]
-years = [f[-8:-4] for f in files]
+years = [int(f[-8:-4]) for f in files]
 
 def reshape_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df[["departement", "id_ville", "ville"]] = df[["departement", "id_ville", "ville"]].apply(lambda series: series.str.strip())
@@ -52,10 +52,10 @@ columns={"Dép.": "departement", "Commune": "id_ville", "Libellé de la commune"
 df = pd.DataFrame()
 for file, year in zip(files[::-1], years[::-1]):
     with zipfile.ZipFile(ircom_path / file, "r") as zf:
-        file_bytes = zf.read(f"ircom_communes_complet_revenus_{year}.xlsx")
-        header = pd.read_excel(BytesIO(file_bytes), nrows=100, usecols="C")
+        file_bytes = zf.read(next(p for p in zf.namelist() if p.endswith(f"ircom_communes_complet_revenus_{year}.xlsx")))
+        header = pd.read_excel(BytesIO(file_bytes), nrows=100, usecols="C", engine='openpyxl')
         h = list(header.iloc[:, 0]).index("Commune")
-        sub = pd.read_excel(BytesIO(file_bytes), header=h+1, usecols="B:N", dtype={"Dép.": object, "Commune": object, "Libellé de la commune": object})
+        sub = pd.read_excel(BytesIO(file_bytes), header=h+1, usecols="B:N", dtype={"Dép.": object, "Commune": object, "Libellé de la commune": object}, engine='openpyxl')
     sub.drop(index=sub[sub.Commune.isna()].index, inplace=True)
     sub = sub.rename(columns=columns)[list(columns.values())].replace("n.c.", float("nan"))
     sub = reshape_dataframe(sub)

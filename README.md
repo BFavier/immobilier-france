@@ -78,13 +78,9 @@ https://ec.europa.eu/eurostat/fr/web/products-datasets/-/TEC00104
 
 # Taux d'intérets emprunts immobiliers
 
-Cliquer sur "Series" dans la catégorie "crédits immobiliers"
+Taux moyen des prêts immobiliers approuvés
 
-https://www.banque-france.fr/statistiques/taux-et-cours/taux-dusure
-
-ou directement
-
-https://webstat.banque-france.fr/fr/#/node/5385789?SERIES_KEY=MIR1.Q.FR.R.A22FRF.Q.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRF.R.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRF.S.R.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRR.A.C.A.2254FR.EUR.N&SERIES_KEY=MIR1.Q.FR.R.A22FRV.A.C.A.2254FR.EUR.N
+https://webstat.banque-france.fr/fr/#/quickview/SERIES_KEY/MIR1.M.FR.B.A22HR.A.R.A.2254U6.EUR.N/node_EQU__AND_DATASET_EQU_MIR1_AND_periodSortOrder_EQU_DESC
 
 # Nombre nouveaux prêts immobiliers aux particuliers
 

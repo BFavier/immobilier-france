@@ -24,7 +24,7 @@ df[fracs] /= 100
 change = pd.read_csv(data_path / "usd-eur.csv", decimal=",")
 day, month, year = zip(*[tuple(int(v) for v in  d[:10].split("/")) for d in change["Date"]])
 change["year"] = year
-change = change.groupby("year").agg("mean")["Close"].to_dict()
+change = change[["Close", "year"]].groupby("year").agg("mean")["Close"].to_dict()
 
 df["euros_par_habitant"] = [usd/change[year] for usd, year in zip(df["USD_par_habitant"], df["date"])]
 
