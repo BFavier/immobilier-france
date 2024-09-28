@@ -21,6 +21,7 @@ Execute **stackbuilder** from the bin folder of postgreSQL installation folder. 
 To create an empty local database named **dvf** with postGIS extension activated, run the commands:
 
 ~~~
+psql -h localhost -p 5432 -U postgres -c "dropdb 'dvf';"
 psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE dvf;"
 psql -h localhost -p 5432 -U postgres -d dvf -c "CREATE EXTENSION postgis; CREATE EXTENSION postgis_topology;"
 ~~~
@@ -91,6 +92,8 @@ https://webstat.banque-france.fr/fr/#/quickview/SERIES_KEY/MIR1.M.FR.B.A2C.A.B.A
 Apport disponible
 
 https://data.oecd.org/fr/hha/actifs-financiers-des-menages.htm#indicator-chart
+or this link
+https://data-explorer.oecd.org/vis?lc=fr&tm=actifs%20financiers&pg=0&snb=157&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_NASEC20%40DF_T7HH_Q&df[ag]=OECD.SDD.NAD&df[vs]=1.1
 
 Le taux de change USD --> EUR peut être obtenu en tapant la formule suivante dans une cellule google sheet
 ~~~
@@ -105,6 +108,8 @@ en 2018:
 https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2018/
 en 2022:
 https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2022/
+en 2023:
+https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2023/
 
 # Indice de Reference des Loyers (IRL)
 

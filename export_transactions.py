@@ -44,4 +44,4 @@ for c, t in zip(columns, dtypes):
 #              for c, t in zip(columns, dtypes)}
 np.savez_compressed(tables_path / "transactions.npz", **arrays)
 pd.DataFrame.from_dict({k: [s.decode("utf-8") for s in v.tobytes().split(b"\x00")] if v.dtype == np.uint8 else v for k, v in arrays.items()}
-                       ).sample(n=100).to_csv("transactions_sample.csv", index=False)
+                       ).sample(n=100).to_csv(tables_path/"transactions_sample.csv", index=False)

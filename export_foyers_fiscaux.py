@@ -53,9 +53,16 @@ df = pd.DataFrame()
 for file, year in zip(files[::-1], years[::-1]):
     with zipfile.ZipFile(ircom_path / file, "r") as zf:
         file_bytes = zf.read(next(p for p in zf.namelist() if p.endswith(f"ircom_communes_complet_revenus_{year}.xlsx")))
-        header = pd.read_excel(BytesIO(file_bytes), nrows=100, usecols="C", engine='openpyxl')
-        h = list(header.iloc[:, 0]).index("Commune")
-        sub = pd.read_excel(BytesIO(file_bytes), header=h+1, usecols="B:N", dtype={"Dép.": object, "Commune": object, "Libellé de la commune": object}, engine='openpyxl')
+        header = pd.read_excel(BytesIO(file_bytes), nrows=100, usecols="A:C", engine='openpyxl')
+        for column in range(10):
+            rows = list(header.iloc[:, column])
+            if ("Dép." not in rows):
+                continue
+            h = rows.index("Dép.")
+            break
+        else:
+            raise RuntimeError("'Dép.' not found in file")
+        sub = pd.read_excel(BytesIO(file_bytes), header=h+1, usecols=f"{chr(65+column)}:{chr(65+column+12)}", dtype={"Dép.": object, "Commune": object, "Libellé de la commune": object}, engine='openpyxl')
     sub.drop(index=sub[sub.Commune.isna()].index, inplace=True)
     sub = sub.rename(columns=columns)[list(columns.values())].replace("n.c.", float("nan"))
     sub = reshape_dataframe(sub)
